@@ -11,18 +11,18 @@ env:
   SUBSCRIPTION-ID: 9157087b-28a6-4c6b-a615-c827504e377a
   WEBAPP-NAME: projeto-tcc-2023
 
-   buildandtest:
-      runs-on: ubuntu-latest
-      steps:
+  buildandtest:
+    runs-on: ubuntu-latest
+    steps:
       #checkout the repository
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
       # upload the bicep template as artifacts for next job
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: bicep-template
-          path: ${{ env.TEMPLATE-FILE }}
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: bicep-template
+        path: ${{ env.TEMPLATE-FILE }}
 
     # Use Bicep to deploy infrastructure + Publish webapp 
     deploy:
@@ -40,10 +40,10 @@ env:
         path: bicep-template
         
    #Login in your azure subscription using a service principal (credentials stored as GitHub Secret in repo)
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.PROJETO_TCC_SECRETS}}
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.PROJETO_TCC_SECRETS}}
            
     # Deploy Azure WebApp using Bicep file
     - name: deploy
