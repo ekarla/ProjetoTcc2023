@@ -1,4 +1,4 @@
-name: modelo de pipeline com deploy em nuvem
+name: modelo de pipeline com deploy 
 
 #Triggers (uncomment line below to use it)
 on: [push, workflow_dispatch]
