@@ -9,3 +9,16 @@ env:
   SUBSCRIPTION-ID: 9157087b-28a6-4c6b-a615-c827504e377a
   WEBAPP-NAME: projeto-tcc-2023
   
+jobs:
+  buildandtest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: bicep-template
+        path: ${{ env.TEMPLATE-FILE }}
+  
+  
