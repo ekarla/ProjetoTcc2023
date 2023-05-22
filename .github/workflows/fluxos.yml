@@ -38,5 +38,13 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.PROJETO_TCC_SECRETS }}
+      - name: deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ env.SUBSCRIPTION-ID }}
+          resourceGroupName: ${{ env.RESOURCE-GROUP }}
+          template: bicep-template/webapp.bicep
+          parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+          failOnStdErr: false   
            
   
