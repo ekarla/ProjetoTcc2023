@@ -20,5 +20,23 @@ jobs:
       with:
         name: bicep-template
         path: ${{ env.TEMPLATE-FILE }}
-  
+        
+  deploy:
+    runs-on: ubuntu-latest
+    needs: buildandtest
+    environment:
+      name: 'Development'
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: bicep-template
+          path: bicep-template
+        
+   #Login in your azure subscription using a service principal (credentials stored as GitHub Secret in repo)
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+           
   
