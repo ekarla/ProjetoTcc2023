@@ -10,19 +10,20 @@ env:
   TEMPLATE-FILE: .azure-pipeline/aplicativo.bicep
   SUBSCRIPTION-ID: 9157087b-28a6-4c6b-a615-c827504e377a
   WEBAPP-NAME: projeto-tcc-2023
-
- buildandtest:
-    runs-on: ubuntu-latest
-    steps:
+  
+jobs:
+  buildandtest:
+      runs-on: ubuntu-latest
+      steps:
     #checkout the repository
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         
     # upload the bicep template as artifacts for next job
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3
-      with:
-        name: bicep-template
-        path: ${{ env.TEMPLATE-FILE }}
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: bicep-template
+          path: ${{ env.TEMPLATE-FILE }}
         
   # Use Bicep to deploy infrastructure + Publish webapp 
   deploy:
