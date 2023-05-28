@@ -1,0 +1,159 @@
+.main-body{
+    margin-top: 90px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+}
+
+.text-index{
+    color:azure;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.image-index{
+    background-image: url("/img/Skifree.png");
+    margin-top: 20px;
+    width: 1400px;
+    height: 700px;
+    background-size: 100% 100%;
+
+}
+
+form [type="submit"]{
+    margin-bottom: 40px;
+}
+
+
+.campo-opcoes a{
+    padding-left: 8px;
+}
+.campo-opcoes{
+    text-align: right;
+}
+.campo-id{
+    width: 40px;
+}
+
+.card-cursos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: palevioletred;
+}
+
+.index-cursos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.botao{
+    margin-top: 5px;
+}
+.para-direita {
+    background-image: url("/img/skier.png");
+    background-position: -25px -6px;
+    width: 22px;
+    height: 28px;
+ }
+ 
+ .para-esquerda {
+    background-image: url("/img/skier.png");
+    background-position: -26px -43px;
+    width: 22px;
+    height: 28px;
+ }
+ 
+ .para-frente {
+    background-image: url("/img/skier.png");
+    background-position: -67px -2px;
+    width: 15px;
+    height: 32px;
+ }
+ .bateu {
+     background-image: url("/img/skier.png");
+     background-position: -84px -81px;
+     width: 32px;
+     height: 28px;
+ }
+ 
+ .morreu {
+     background-image: url("/img/skier.png");
+     background-position: -240px -2px;
+     width: 32px;
+     height: 28px;
+ }
+ .arvore {
+    background-image: url("/img/obstacles.png");
+    background-position: -0px -31px;   
+    width: 28px;
+    height: 32px;   
+    position: absolute;
+ }
+ 
+ .cogumelo{
+     background-image: url("/img/obstacles.png");
+     background-position: -268px -40px;
+     width: 15px;
+     height: 28px;
+     position: absolute;
+ }
+ .arbusto {
+     background-image: url("/img/obstacles.png");
+     background-position: -50px -98px;   
+     width: 25px;
+     height: 32px;   
+     position: absolute;
+  }
+  .rocha {
+     background-image: url("/img/obstacles.png");
+     background-position: -30px -45px;   
+     width: 25px;
+     height: 30px;   
+     position: absolute;
+  }
+ 
+  .toco {
+     background-image: url("/img/obstacles.png");
+     background-position: -250px -45px;   
+     width: 20px;
+     height: 25px;   
+     position: absolute;
+  }
+ 
+  .big {
+     background-image: url("/img/obstacles.png");
+     background-position: -92px -70px;   
+     width: 35px;
+     height: 60px;   
+     position: absolute;
+  }
+ 
+ #montanha {
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 100px;
+    text-align:center;
+    
+ }
+ #skier {
+    position: absolute;
+ }
+ 
+ .distancia {
+     width:260px;
+     border:1px dashed;
+     padding: 4px 4px;
+ }
+ div.imagem{
+    display: inline-block;
+    position: relative;
+ }
+ .texto1{
+    text-align: justify;
+    padding: 5px 0px 5px 0px;
+   
+ }
+ 

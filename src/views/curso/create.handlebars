@@ -1,0 +1,46 @@
+<div class="main-body">
+    <h3>Adicionar Curso</h3>
+    <form action="/curso/create" method="post">
+        <input type="hidden" name="_csrf" value="{{csrf}}"/>
+        <div class="form-group">
+            <label for="sigla" >Sigla do Curso</label>
+            <input type="text" class="form-control" id="sigla" name = "sigla" placeholder="Informa a nome do curso">
+        </div>
+
+        <div class="form-group">
+            <label for="nome" >Nome do Curso</label>
+            <input type="text" class="form-control" id="sigla" name = "nome" placeholder="Informa a nome do curso">
+        </div>
+
+
+        <div class="form-group">
+            <label for="descricao" >Descrição do Curso</label>
+            <textarea class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+        </div>
+
+        <fieldset class="form-group">
+            <legend class="mt-4">Área da Ciência</legend>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="area" id="area" value="1" checked="">
+                    Ciências Exatas. Ex: Computação, Matemática, Estatistica, etc.
+                </label>  
+            </div>
+            <div>
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="area" id="area" value="1" checked="">
+                    Ciências Biológicas. Ex: Medicina, Odonto, Agronomia, etc.
+                </label>
+            </div>
+            <div>
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="area" id="area" value="1" checked="">
+                    Ciências Humanas. Ex: Letras, História, Psicologia, etc.
+                </label>
+            </div>
+        </fieldset>
+
+    <button type="submit" class="btn btn-outline-primary">Adicionar Curso</button>
+    </form>
+</div>
+

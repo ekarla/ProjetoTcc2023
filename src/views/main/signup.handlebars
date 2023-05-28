@@ -1,0 +1,29 @@
+<div class="main-body">
+    <h3>Criação de Usuario</h3>
+    <form action="/signup" method="post">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+            <label for="inputEmail4">Nome Completo</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+            </div>
+            <div class="form-group col-md-6">
+            <label for="inputEmail4">Endereço de Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="fulano@gmail.com">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="cursoId" class="form-label mt-4">Selecione seu curso</label>
+                <select class="form-select" id="cursoId" name="cursoId">
+                    {{#each curso}}
+                        <option value="{{id}}">{{nome}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Senha</label>
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Password">
+            </div>       
+        </div>
+        <button type="submit" class="btn btn-primary">Criar Conta</button>
+    </form>
+</div>

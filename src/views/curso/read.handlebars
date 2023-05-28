@@ -1,0 +1,25 @@
+<div class="main-body">
+  <div class="card">
+    <div class="card-header card-cursos">
+      <div >{{curso.nome}}</div>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><b>Área: </b> {{curso.Area.nome}}.</p>
+      <p class="card-text"><b>Descrição: </b> {{curso.descricao}}</p> 
+    </div>
+  </div>
+
+  <div class="btn"> 
+    <a class="btn btn-primary" href="/curso" role="button">Voltar</a>
+    <button id = "botao-delecao" type="button" class="btn btn-primary">Apagar Curso</button>
+  </div>
+</div>
+
+<script>
+  const botaoDelecao = document.getElementById("botao-delecao");
+  botaoDelecao.onclick = function(){
+    apagarCurso({{curso.id}});
+  }
+</script>
+
+
