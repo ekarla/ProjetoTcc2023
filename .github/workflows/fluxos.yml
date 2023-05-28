@@ -1,9 +1,7 @@
 name: modelo de pipeline com deploy em nuvem
 
-#Triggers (uncomment line below to use it)
 on: [push, workflow_dispatch]
 
-#Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
   RESOURCE-GROUP: RGPROJETOTCC2023
   LOCATION: eastus2
@@ -11,11 +9,23 @@ env:
   SUBSCRIPTION-ID: 9157087b-28a6-4c6b-a615-c827504e377a
   WEBAPP-NAME: projeto-tcc-2023
 
+jobs:
  buildandtest:
     runs-on: ubuntu-latest
     steps:
-    #checkout the repository
     - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm run build 
+
+    - name: "📂 production artifacts"
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+
         
     # upload the bicep template as artifacts for next job
     - name: Upload artifact for deployment job
@@ -51,7 +61,7 @@ env:
       with:
         subscriptionId: ${{ env.SUBSCRIPTION-ID }}
         resourceGroupName: ${{ env.RESOURCE-GROUP }}
-        template: bicep-template/aplicativo.bicep
+        template: bicep-template/web.bicep
         parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
         failOnStdErr: false   
     
