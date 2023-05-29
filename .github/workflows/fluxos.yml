@@ -18,7 +18,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npm run start 
+    - run: npm install
 
     - name: production artifacts
       uses: actions/upload-artifact@v2
