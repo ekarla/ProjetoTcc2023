@@ -26,7 +26,7 @@ jobs:
     - name: production artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: build
+        name: prod
         path: ./build
 
         
