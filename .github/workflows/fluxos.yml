@@ -20,11 +20,14 @@ jobs:
         node-version: 16
     - run: npm install
 
+    - name: Buildando o projeto
+    - run: npm run build
+
     - name: production artifacts
       uses: actions/upload-artifact@v2
       with:
         name: build
-        path: build
+        path: ./build
 
         
     # upload the bicep template as artifacts for next job
